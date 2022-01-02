@@ -1,5 +1,7 @@
-class Solution {
-    public int firstUniqChar(String s) {
+package leetcode;
+
+public class FindFirstUniqueCharacter {
+    public int findFirstUniqueCh(String s) {
         int result = -1;
         for (int i = 0; i < s.length(); i++) {
             int found = 0;
@@ -7,8 +9,6 @@ class Solution {
                 if (s.charAt(i) == s.charAt(j) && i != j) {
                     found = 1;
                     break;
-                } else {
-                    continue;
                 }
             }
             if (found == 0) {
@@ -16,6 +16,14 @@ class Solution {
                 break;
             }
         }
-        return result; 
+        return result;
     }
+
+    public static void main(String[] args) {
+        String s  = "loveleetcode";
+        FindFirstUniqueCharacter findFirstUniqueCharacter = new FindFirstUniqueCharacter();
+        int result = findFirstUniqueCharacter.findFirstUniqueCh(s);
+        System.out.println(result);
+    }
+
 }
